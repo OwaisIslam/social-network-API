@@ -11,19 +11,34 @@ const {
 
 
 // /api/thoughts
-router.route("/").get(getAllThoughts);
+router.route("/")
+	.get(getAllThoughts);
 
 // /api/thoughts/<thoughtId>
-router.route("/:thoughtId").get(getThoughtById).put(updateThought);
+router.route("/:thoughtId")
+	.get(getThoughtById)
+	.put(updateThought);
 
 // /api/thoughts/<userId>
-router.route("/:userId").post(createThought);
+router.route("/:userId")
+	.post(createThought);
+
 
 // /api/thoughts/<userId>/<thoughtId>
-router.route("/:userId/:thoughtId").post(addReaction).delete(deleteThought);
+router.route("/:userId/:thoughtId")
+	.delete(deleteThought);
 
-// /api/thoughts/<userId>/<thoughtId>/<reactionId>
-router.route("/:userId/:thoughtId/:reactionId").delete(removeReaction);
+// /api/thoughts/<thoughtId>/reactions
+router.route("/:thoughtId/reactions")
+	.put(addReaction)
+
+// /api/thoughts/<thoughtId>/reactions/<reactionId>
+router.route("/:thoughtId/reactions/:reactionId")
+	.delete(removeReaction);
+
+// // /api/thoughts/<userId>/<thoughtId>/reactions/<reactionId>
+// router.route("/:userId/:thoughtId/reactions/:reactionId")
+// 	.delete(removeReaction);
 
 
 module.exports = router;

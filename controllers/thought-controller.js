@@ -29,7 +29,6 @@ const thoughtController = {
 	},
 	// create a thought
 	createThought({ params, body }, res) {
-		console.log(body);
 		Thought.create(body)
 			.then(({ _id }) => {
 				return User.findOneAndUpdate(
@@ -92,6 +91,7 @@ const thoughtController = {
 			{ new: true, runValidators: true }
 		)
 			.then((dbUserData) => {
+				console.log("userdata: " , dbUserData);
 				if (!dbUserData) {
 					res.status(404).json({ message: "No user found with this ID!" });
 					return;
