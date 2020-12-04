@@ -1,30 +1,10 @@
-# Social Media API
-
-![gnu](https://img.shields.io/badge/license-GNU%20GPLv3-green)
+# Social Network API
     
 ## Description
-This project is a social media back-end that allows the user to perform CRUD operations by adding names.
-## Table of Contents
-* [Description](#description)
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
-## Installation
-Install Mongo
-## Usage
-Free Use
-## License
+This challenge involved creating a social network backend using MongoDB and Express that allows users to share their thoughts, react to friends’ thoughts, and create a friend list. Express.js was used for routing and a MongoDB database was created.
 
-This application is covered by the GNU General Purpose License, the terms of which can be found [here](https://www.gnu.org/licenses/gpl-3.0.en.html).
-    
-## Contributing
-none
-## Tests
-No tests
-## Questions
-[GitHub Profile](https://github.com/OwaisIslam/)  
+The various API routes were tested using Insomnia Core.
 
-I can be reached at owaisislam@gmail.com.
+
+## Walkthrough Video
+There walkthrough video can be found [here](https://drive.google.com/file/d/1EFwtbezbfTrEde2uVKi_eXZDmR-KHaL1/view).
