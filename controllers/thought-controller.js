@@ -14,7 +14,8 @@ const thoughtController = {
 	},
 	// get specific thought
 	getThoughtById({ params }, res) {
-		Thought.findOne({ _id: params.thoughtID })
+		Thought.findOne({ _id: params.thoughtId })
+			.select("-__v")
 			.then((dbThoughtData) => {
 				if (!dbThoughtData) {
 					res.status(404).json({ message: "No thought found with this ID!" });
@@ -64,8 +65,8 @@ const thoughtController = {
 	// delete thought
 	deleteThought({ params }, res) {
 		Thought.findOneAndDelete({ _id: params.thoughtId })
-			.then((dbThoughtData) => {
-				if (!dbThoughtData) {
+			.then((deletedThought) => {
+				if (!deletedThought) {
 					res.status(404).json({ message: "No thought found with this ID!" });
 				}
 				return User.findOneAndUpdate(
